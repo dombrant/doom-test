@@ -2,9 +2,15 @@
   "name": "doom-test",
   "version": "1.0.0",
   "description": "Checks if your bundle is smaller than Doom (2.39 MB).",
+  "type": "module",
   "main": "index.js",
   "scripts": {},
   "keywords": [],
   "author": "Dominic Brant",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^4.1.1",
+    "log-symbols": "^5.0.0",
+    "ora": "^5.4.1"
+  }
 }
