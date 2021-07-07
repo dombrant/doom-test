@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "Checks if your bundle is smaller than Doom (2.39 MB).",
   "type": "module",
-  "main": "index.js",
-  "scripts": {},
+  "main": "doom-test.js",
+  "scripts": {
+    "start": "node doom-test.js"
+  },
   "keywords": [],
   "author": "Dominic Brant",
   "license": "MIT",
