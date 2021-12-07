@@ -7,10 +7,21 @@ const args = process.argv.slice(2);
 const cwd = process.cwd();
 const path = args[0] || "dist";
 
-try {
-  const bundleFolder = await stat(`${cwd}/${path}`);
+const getFileSize = async (file) => {
+  const fileStats = await stat(`${cwd}/${path}/${file}`);
+  return fileStats.size;
+};
 
-  console.log(bundleFolder.size);
+try {
+  const files = await readdir(`${cwd}/${path}`);
+  let bundleSize = 0;
+
+  for (const file of files) {
+    const fileSize = await getFileSize(file);
+    bundleSize += fileSize;
+  }
+
+  console.log(bundleSize);
 } catch (error) {
-  console.log("Promise failed");
+  console.log(`Promise failed: ${error}`);
 }
