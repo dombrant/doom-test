@@ -23,8 +23,15 @@ const getDirectorySize = async (path) => {
   const pathItems = await readdir(`${cwd}/${path}`);
 
   for (const item of pathItems) {
-    const itemSize = await getFileSize(path, item);
-    directorySize += itemSize;
+    // If there is another folder within the folder "path", get the size of that folder
+    // Otherwise, get the size of the item if it is a file
+    if (isItemADirectory(`${path}/${item}`)) {
+      const subDirectorySize = await getDirectorySize(item);
+      directorySize += subDirectorySize;
+    } else {
+      const itemSize = await getFileSize(path, item);
+      directorySize += itemSize;
+    }
   }
 
   return directorySize;
