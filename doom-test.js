@@ -2,26 +2,46 @@ import ora from "ora";
 import logSymbols from "log-symbols";
 import chalk from "chalk";
 import { readdir, stat } from "fs/promises";
+import { statSync } from "fs";
 
 const args = process.argv.slice(2);
 const cwd = process.cwd();
-const path = args[0] || "dist";
+const projectPath = args[0] || "dist";
 
-const getFileSize = async (file) => {
+const getFileSize = async (path, file) => {
   const fileStats = await stat(`${cwd}/${path}/${file}`);
   return fileStats.size;
 };
 
-try {
-  const files = await readdir(`${cwd}/${path}`);
-  let bundleSize = 0;
+const isItemADirectory = (path) => {
+  const pathItemsStat = statSync(`${cwd}/${path}`);
+  return pathItemsStat.isDirectory();
+};
 
-  for (const file of files) {
-    const fileSize = await getFileSize(file);
-    bundleSize += fileSize;
+const getDirectorySize = async (path) => {
+  let directorySize = 0;
+  const pathItems = await readdir(`${cwd}/${path}`);
+
+  for (const item of pathItems) {
+    const itemSize = await getFileSize(path, item);
+    directorySize += itemSize;
   }
 
-  console.log(bundleSize);
-} catch (error) {
-  console.log(`Promise failed: ${error}`);
-}
+  return directorySize;
+};
+
+await getDirectorySize("test").then((size) => console.log(size));
+
+// try {
+//   const files = await readdir(`${cwd}/${projectPath}`);
+//   let bundleSize = 0;
+
+//   for (const file of files) {
+//     const fileSize = await getFileSize(projectPath, file);
+//     bundleSize += fileSize;
+//   }
+
+//   console.log(bundleSize);
+// } catch (error) {
+//   console.log(`Promise failed: ${error}`);
+// }
