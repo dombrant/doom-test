@@ -6,7 +6,8 @@ import chalk from "chalk";
 const args = process.argv.slice(2);
 const projectPath = args[0] || "dist";
 
-await getDirectorySize("test").then((size) => console.log(size));
+const bundleSize = await getDirectorySize(projectPath);
+console.log(bundleSize);
 
 // try {
 //   const files = await readdir(`${cwd}/${projectPath}`);
