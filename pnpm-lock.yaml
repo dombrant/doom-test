@@ -3,10 +3,12 @@ lockfileVersion: 5.4
 specifiers:
   chalk: ^4.1.1
   log-symbols: ^5.0.0
+  pretty-bytes: ^6.0.0
 
 dependencies:
   chalk: 4.1.1
   log-symbols: 5.0.0
+  pretty-bytes: 6.0.0
 
 packages:
 
@@ -52,6 +54,11 @@ packages:
     dependencies:
       chalk: 4.1.1
       is-unicode-supported: 1.0.0
+    dev: false
+
+  /pretty-bytes/6.0.0:
+    resolution: {integrity: sha512-6UqkYefdogmzqAZWzJ7laYeJnaXDy2/J+ZqiiMtS7t7OfpXWTlaeGMwX8U6EFvPV/YWWEKRkS8hKS4k60WHTOg==}
+    engines: {node: ^14.13.1 || >=16.0.0}
     dev: false
 
   /supports-color/7.2.0:
