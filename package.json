@@ -13,7 +13,6 @@
   "license": "MIT",
   "dependencies": {
     "chalk": "^4.1.1",
-    "log-symbols": "^5.0.0",
-    "ora": "^5.4.1"
+    "log-symbols": "^5.0.0"
   }
 }
