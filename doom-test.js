@@ -18,7 +18,7 @@ const doomTest = async () => {
       );
     } else {
       console.log(
-        `${logSymbols.error} ${chalk.red("Build failed")}: ${prettyBytes(
+        `${logSymbols.error}${chalk.red("Build failed")}: ${prettyBytes(
           bundleSize
         )}`
       );
