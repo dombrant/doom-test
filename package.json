@@ -6,7 +6,7 @@
   "main": "doom-test.js",
   "scripts": {
     "start": "node doom-test.js",
-    "test": "node doom-test test"
+    "test": "pnpx nodemon cli.js ./test"
   },
   "keywords": [],
   "author": "Dominic Brant",
