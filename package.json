@@ -5,7 +5,6 @@
   "type": "module",
   "main": "doom-test.js",
   "scripts": {
-    "start": "node doom-test.js",
     "test": "pnpx nodemon cli.js ./test"
   },
   "keywords": [],
