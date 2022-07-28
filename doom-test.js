@@ -1,4 +1,4 @@
-import { getDirectorySize } from "./lib/getDirectorySize.js";
+import { getDirectorySize } from "./utils/getDirectorySize.js";
 import logSymbols from "log-symbols";
 import chalk from "chalk";
 import prettyBytes from "pretty-bytes";
