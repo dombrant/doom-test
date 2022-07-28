@@ -12,15 +12,15 @@ const doomTest = async () => {
     // Use`1024 ** 2` to convert the value from bytes to megabytes;
     if (bundleSize / 1024 ** 2 < 2.39) {
       console.log(
-        `${chalk.green("Build passed")}: ${prettyBytes(bundleSize)} ${
-          logSymbols.success
-        }`
+        `${logSymbols.success} ${chalk.green("Build passed")}: ${prettyBytes(
+          bundleSize
+        )}`
       );
     } else {
       console.log(
-        `${chalk.red("Build failed")}: ${prettyBytes(bundleSize)} ${
-          logSymbols.error
-        }`
+        `${logSymbols.error} ${chalk.red("Build failed")}: ${prettyBytes(
+          bundleSize
+        )}`
       );
     }
   } catch (error) {
