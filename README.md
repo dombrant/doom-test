@@ -19,7 +19,8 @@ Call `doom-test` from the command line, with the option to pass an argument of t
 ## Contributors
 
 **Dominic Brant**.
-If you have any thoughts/suggestions/problems, feel free to open an issue.
+
+If you have any thoughts/suggestions/problems, feel free to open an [issue](https://github.com/dombrant/doom-test/issues).
 
 ## Learn More
 
